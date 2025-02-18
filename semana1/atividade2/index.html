@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <script>
+        let dois = 2;
+        let auxiliar = 0;
+        let numero;
+        while (isNaN(numero)) {
+            numero = parseFloat(prompt("Digite um número inteiro positivo:", ""));
+        }
+        if (numero <= 1) {
+            alert("O número não é primo!")
+        } else {
+            while (dois <= Math.sqrt(numero)) {
+                if (numero % dois === 0) {
+                    auxiliar += 1
+                } dois++
+            }
+            if (auxiliar >= 1) {
+                alert("O número não é primo!")
+            } else {
+                alert("O número é primo!")
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <script>
+        let numeroDigitado;
+        while (isNaN(numeroDigitado)) {
+            numeroDigitado = parseFloat(prompt("Digite um número inteiro positivo:"));
+        }
+
+        if (Number.isInteger(numeroDigitado) && numeroDigitado > 0) {
+            if (numeroDigitado % 2 === 0) {
+                alert("O número é par!");
+            } else {
+                alert("O número é ímpar!");
+            }
+        } else {
+            alert("Número digitado inválido! Digite um número inteiro positivo.");
+        }
+    </script>
+</body>
+
+</html>
