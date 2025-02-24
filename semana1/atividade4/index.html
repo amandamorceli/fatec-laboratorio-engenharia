@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+
+<body>
+    <script>
+
+        var tipo;
+        const dado = prompt("Digite algum dado: ", "");
+        if (confirm("Deseja verificar o tipo do dado informado?")) {
+
+            if (!isNaN(dado) && dado.trim() !== "") {
+                if (dado.includes(".")) {
+                    tipo = "Number (float)";
+                } else {
+                    tipo = "Number (int)";
+                }
+            }
+            else if (dado.toLowerCase() === "true" || dado.toLowerCase() === "false") {
+                tipo = "Boolean";
+            }
+            else {
+                tipo = "String";
+            }
+            alert("O tipo de dado é: " + tipo);
+        } else {
+            alert("Obrigado por visitar esta página!")
+        }
+    </script>
+
+</body>
+
+</html>

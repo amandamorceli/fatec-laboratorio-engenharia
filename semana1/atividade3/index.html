@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 3</title>
 </head>
+
 <body>
     <script>
-        
+        var fatorial = 1;
+        while (isNaN(numero) || numero < 0 || !(Number.isInteger(numero))) {
+            var numero = parseFloat(prompt("Digite um número inteiro positivo:", ""));
+        }
+        const numeroDigitado = numero;
+        if (numero == 0) {
+            alert("O fatorial é 1.");
+        }
+        if (numero > 0) {
+            while (numero >= 1) {
+                fatorial *= numero;
+                numero -= 1;
+            } alert(`Fatorial de ${numeroDigitado} é ${fatorial}.`)
+        }
     </script>
-    
+
 </body>
+
 </html>

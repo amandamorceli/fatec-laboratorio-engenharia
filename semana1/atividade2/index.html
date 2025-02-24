@@ -10,19 +10,18 @@
 
 <body>
     <script>
-        let dois = 2;
-        let auxiliar = 0;
-        let numero;
-        while (isNaN(numero)) {
-            numero = parseFloat(prompt("Digite um número inteiro positivo:", ""));
+        var divisao = 2;
+        var auxiliar = 0;
+        while (isNaN(numeroDigitado) || numeroDigitado < 0 || !(Number.isInteger(numeroDigitado))) {
+            var numeroDigitado = parseFloat(prompt("Digite um número inteiro positivo:", ""));
         }
-        if (numero <= 1) {
+        if (numeroDigitado <= 1) {
             alert("O número não é primo!")
         } else {
-            while (dois <= Math.sqrt(numero)) {
-                if (numero % dois === 0) {
+            while (divisao <= Math.sqrt(numeroDigitado)) {
+                if (numeroDigitado % divisao == 0) {
                     auxiliar += 1
-                } dois++
+                } divisao++
             }
             if (auxiliar >= 1) {
                 alert("O número não é primo!")
