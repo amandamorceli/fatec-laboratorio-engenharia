@@ -1,3 +1,5 @@
+document.getElementById("verifica-palindromo").addEventListener("click", verificarPalindromo);
+
 function Palindromo(palavra) {
     palavra = palavra.replace(/\s/g, "").toLowerCase();
     const reverso = palavra.split("").reverse().join("");
