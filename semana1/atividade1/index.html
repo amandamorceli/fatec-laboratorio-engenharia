@@ -5,20 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 1</title>
-    <script src="script.js"></script>
 </head>
 
 <body>
+    <a href="../../index.html">
+        <button>Voltar à Lista</button>
+    </a>
+    
     <script>
         while (isNaN(numeroDigitado) || numeroDigitado < 0 || !(Number.isInteger(numeroDigitado))) {
             var numeroDigitado = parseFloat(prompt("Digite um número inteiro positivo:"));
         }
 
-        if (numeroDigitado % 2 === 0) {
-            alert("O número é par!");
-        } else {
-            alert("O número é ímpar!");
-        }
+        alert(`O número é ${numeroDigitado % 2 === 0 ? "par" : "ímpar"}!`);
 
     </script>
 </body>

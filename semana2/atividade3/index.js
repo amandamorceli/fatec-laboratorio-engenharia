@@ -5,10 +5,6 @@ function Palindromo(palavra) {
 }
 
 function verificarPalindromo() {
-    let palavra = document.getElementById("inputPalindromo").value;
-    if (palindrome(palavra)) {
-        alert("É palíndromo!");
-    } else {
-        alert("Não é palíndromo!");
-    }
+    const inputPalavra = document.getElementById("inputPalindromo").value;
+    alert(`${Palindromo(inputPalavra) ? "É palíndromo!" : "Não é palíndromo!"}`)
 }

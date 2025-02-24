@@ -5,10 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 2</title>
-    <script src="script.js"></script>
 </head>
 
 <body>
+    <a href="../../index.html">
+        <button>Voltar à Lista</button>
+    </a>
+    
     <script>
         var divisao = 2;
         var auxiliar = 0;
@@ -16,17 +19,18 @@
             var numeroDigitado = parseFloat(prompt("Digite um número inteiro positivo:", ""));
         }
         if (numeroDigitado <= 1) {
-            alert("O número não é primo!")
+            alert("O número não é primo!");
         } else {
             while (divisao <= Math.sqrt(numeroDigitado)) {
                 if (numeroDigitado % divisao == 0) {
-                    auxiliar += 1
-                } divisao++
+                    auxiliar += 1;
+                }
+                divisao++;
             }
             if (auxiliar >= 1) {
-                alert("O número não é primo!")
+                alert("O número não é primo!");
             } else {
-                alert("O número é primo!")
+                alert("O número é primo!");
             }
         }
     </script>
