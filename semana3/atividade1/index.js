@@ -1,14 +1,15 @@
-var array = [];
-
 document.getElementById("adiciona-array").addEventListener("click", AdicionarArray);
 // document.getElementById("limpar").addEventListener("click", LimparArray);
+var array = [];
 
 function AdicionarArray() {
     var valor = document.getElementById("inputValor").value;
+    if (valor != "") {
     array.push(valor);
-    LimparInput();
     let arrayOrdenado = OrdenarArray(array);
     ExibirArray(arrayOrdenado);
+    LimparInput();
+    }
 };
 
 function LimparInput() {
