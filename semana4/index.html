@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <a href="../../index.html">
+        <button class="botao-voltar">Voltar à Lista</button>
+      </a>
+      <h2>Fomulário de Cadastro</h2>
+      <form>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo"/>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="fulano.com"/>
+
+        <label for="datanasc">Data de nascimento:</label>
+        <input type="date" id="datanasc" name="datanasc" required />
+
+        <label for="telfixo">Telefone fixo:</label>
+        <input type="tel" id="telfixo" name="telfixo" required placeholder="(99) 99999999"/>
+
+        <label for="celular">Telefone celular:</label>
+        <input type="tel" id="celular" name="celular" placeholder="(99) 9 99999999" required />
+
+        <div class="radius">
+            <label>
+                <input type="radio" name="opcao" value="professor">
+                Professor
+            </label>
+        </div>
+    
+        <div class="radius">
+            <label>
+                <input type="radio" name="opcao" value="aluno">
+                Aluno
+            </label>
+        </div>
+    
+
+        <button type="submit">Cadastrar</button>
+      </form>
+    </div>
+    <div class="apresentacao"></div>
+  </body>
+</html>
