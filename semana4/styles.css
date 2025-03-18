@@ -7,8 +7,10 @@ body {
 
 .container {
     max-width: 600px;
-    margin: 50px;
+    margin: 5px auto;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 h2 {
@@ -20,7 +22,7 @@ form {
     display: flex;
     flex-direction: column;
 }
-/*
+
 label {
     margin-top: 10px;
     font-weight: bold;
@@ -33,7 +35,6 @@ input {
     border-radius: 10px;
     width: 100%;
 }
-
 
 .radius input[type="radio"] {
     margin-right: 10px; /* Espaço entre o radio button e o texto */
@@ -52,4 +53,28 @@ form button {
 
 button:hover {
     background-color: #0056b3;
-} */
+} 
+
+.buttonContainer {
+    display: flex;           
+    flex-direction: row;      
+    justify-content: center;  
+    gap: 10px;   
+}
+
+.radio-group {
+    display: flex;                 
+    gap: 10px;                
+}
+
+.radio-group label {
+    cursor: pointer;
+}
+
+.professor {
+    display: none;
+}
+
+.aluno {
+    display: none;
+}

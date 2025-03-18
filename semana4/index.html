@@ -8,12 +8,12 @@
     <script src="./index.js" defer></script>
   </head>
   <body>
-    <div class="container">
       <a href="../../index.html">
         <button class="botao-voltar">Voltar à Lista</button>
       </a>
+    <div class="container">
       <h2>Fomulário de Cadastro</h2>
-      <form>
+      <form id="formulario">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo"/>
 
@@ -29,24 +29,37 @@
         <label for="celular">Telefone celular:</label>
         <input type="tel" id="celular" name="celular" placeholder="(99) 9 99999999" required />
 
-        <div class="radius">
-            <label>
-                <input type="radio" name="opcao" value="professor">
-                Professor
-            </label>
+        <div class="radio-group">
+          <label>Professor
+              <input type="radio" name="pessoa" value="professor" id="professor"> 
+          </label>
+          <label>Aluno
+              <input type="radio" name="pessoa" value="aluno" id="aluno"> 
+          </label>
         </div>
-    
-        <div class="radius">
-            <label>
-                <input type="radio" name="opcao" value="aluno">
-                Aluno
-            </label>
-        </div>
-    
+        
+        <label for="matricula">Matrícula:</label>
+        <input type="number" id="matricula" name="matricula" required />
 
-        <button type="submit">Cadastrar</button>
+        <div class="professor">
+          <label for="area">Área: </label>
+          <input type="text" id="area" name="area"  placeholder="Digite a área">
+          
+          <label>Lattes: </label>
+          <input type="text" id="lattes" name="lattes"  placeholder="Digite o endereço do currículo Lattes">
+        </div>
+
+        <div class="aluno">
+          <label for="curso">Curso: </label>
+          <input type="text" id="curso" name="curso"  placeholder="Digite o curso">
+        </div>
+
+        <div class="buttonContainer">
+          <button type="submit" id="enviar">Enviar</button>
+          <button type="submit" id="redefinir">Redefinir</button>
+        </div>
       </form>
     </div>
-    <div class="apresentacao"></div>
+    <div class="resultado"></div>
   </body>
 </html>

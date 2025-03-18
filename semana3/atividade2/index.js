@@ -8,7 +8,7 @@ function Carro() {
   var valor_fipe;
   //#endregion
 
-  //#region métodos gets e sets
+  //#region métodos get e set
   this.setMarca = (cMarca) => {
     this.marca = cMarca;
   };
