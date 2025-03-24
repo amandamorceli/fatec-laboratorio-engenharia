@@ -48,7 +48,7 @@ function Pessoa() {
 
 //#region Professor
 function Professor() {
-    Pessoa.call();
+    Pessoa.call(this);
     var area, lattes;
 
     this.setArea = (profArea) => {
@@ -61,7 +61,7 @@ function Professor() {
     this.setLattes = (profLattes) => {
         this.lattes = profLattes 
     };  
-    this.getMatricula = () => {
+    this.getLattes = () => {
         return this.lattes;
     };    
 };
@@ -69,14 +69,14 @@ function Professor() {
 
 //#region Aluno
 function Aluno() {
-    Pessoa.call();
+    Pessoa.call(this);
     var curso;
 
     this.setCurso = (aCurso) => {
         this.curso = aCurso
     };
     this.getCurso = () => {
-        return curso;
+        return this.curso;
     };
 };
 //#endregion
@@ -100,8 +100,7 @@ document.getElementById("redefinir").addEventListener("click", () => {
 
 document.getElementById("enviar").addEventListener("click", (event) => {
         event.preventDefault();
-    
-        // Coleta os dados do formulário
+debugger
         var nome = document.getElementById("nome").value;
         var email = document.getElementById("email").value;
         var dataDeNascimento = document.getElementById("datanasc").value;
@@ -109,40 +108,36 @@ document.getElementById("enviar").addEventListener("click", (event) => {
         var telefoneCelular = document.getElementById("celular").value;
         var matricula = document.getElementById("matricula").value;
     
-        // Cria uma instância da classe Pessoa
-        var pessoa;
+        var pessoaSelecionda;
     
-        // Verifica se foi selecionado "Professor" ou "Aluno"
         if (document.getElementById("professor").checked) {
-            pessoa = new Professor();
-            pessoa.setArea(document.getElementById("area").value);
-            pessoa.setLattes(document.getElementById("lattes").value);
+            pessoaSelecionda = new Professor();
+            pessoaSelecionda.setArea(document.getElementById("area").value);
+            pessoaSelecionda.setLattes(document.getElementById("lattes").value);
         } else if (document.getElementById("aluno").checked) {
-            pessoa = new Aluno();
-            pessoa.setCurso(document.getElementById("curso").value);
+            pessoaSelecionda = new Aluno();
+            pessoaSelecionda.setCurso(document.getElementById("curso").value);
         }
-    
-        // Preenche os dados na instância
-        pessoa.setNome(nome);
-        pessoa.setEmail(email);
-        pessoa.setDataDeNascimento(dataDeNascimento);
-        pessoa.setTelefoneFixo(telefoneFixo);
-        pessoa.setTelefoneCelular(telefoneCelular);
-        pessoa.setMatricula(matricula);
-    
-        // Exibe os dados no console ou em algum lugar
-        var resultadosDiv = document.getElementById("resultados");
+
+        pessoaSelecionda.setNome(nome);
+        pessoaSelecionda.setEmail(email);
+        pessoaSelecionda.setDataDeNascimento(dataDeNascimento);
+        pessoaSelecionda.setTelefoneFixo(telefoneFixo);
+        pessoaSelecionda.setTelefoneCelular(telefoneCelular);
+        pessoaSelecionda.setMatricula(matricula);
+    debugger
+        var resultadosDiv = document.getElementById("resultado");
         resultadosDiv.innerHTML = `
             <h3>Dados Enviados:</h3>
-            <p><strong>Nome:</strong> ${pessoa.getNome()}</p>
-            <p><strong>Email:</strong> ${pessoa.getEmail()}</p>
-            <p><strong>Data de Nascimento:</strong> ${pessoa.getDataDeNascimento()}</p>
-            <p><strong>Telefone Fixo:</strong> ${pessoa.getTelefoneFixo()}</p>
-            <p><strong>Telefone Celular:</strong> ${pessoa.getTelefoneCelular()}</p>
-            <p><strong>Matrícula:</strong> ${pessoa.getMatricula()}</p>
-            ${pessoa.getArea ? `<p><strong>Área:</strong> ${pessoa.getArea()}</p>` : ''}
-            ${pessoa.getLattes ? `<p><strong>Lattes:</strong> ${pessoa.getLattes()}</p>` : ''}
-            ${pessoa.getCurso ? `<p><strong>Curso:</strong> ${pessoa.getCurso()}</p>` : ''}
+            <p><strong>Nome:</strong> ${pessoaSelecionda.getNome()}</p>
+            <p><strong>Email:</strong> ${pessoaSelecionda.getEmail()}</p>
+            <p><strong>Data de Nascimento:</strong> ${pessoaSelecionda.getDataDeNascimento()}</p>
+            <p><strong>Telefone Fixo:</strong> ${pessoaSelecionda.getTelefoneFixo()}</p>
+            <p><strong>Telefone Celular:</strong> ${pessoaSelecionda.getTelefoneCelular()}</p>
+            <p><strong>Matrícula:</strong> ${pessoaSelecionda.getMatricula()}</p>
+            ${pessoaSelecionda.getArea ? `<p><strong>Área:</strong> ${pessoaSelecionda.getArea()}</p>` : ''}
+            ${pessoaSelecionda.getLattes ? `<p><strong>Lattes:</strong> ${pessoaSelecionda.getLattes()}</p>` : ''}
+            ${pessoaSelecionda.getCurso ? `<p><strong>Curso:</strong> ${pessoaSelecionda.getCurso()}</p>` : ''}
         `;
     });
 

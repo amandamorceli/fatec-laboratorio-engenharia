@@ -7,20 +7,27 @@ body {
 
 .container {
     max-width: 600px;
+    height: 700px;
     margin: 5px auto;
-    padding: 20px;
-    justify-content: center;
-    align-items: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: stretch;
+    background: white;
+    border-radius: 10px;
 }
 
 h2 {
     text-align: left;
     margin-bottom: 20px;
 }
- 
+
 form {
     display: flex;
     flex-direction: column;
+    flex-grow: 1; 
+    overflow-y: auto;
 }
 
 label {
@@ -33,15 +40,32 @@ input {
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    width: 100%;
 }
 
-.radius input[type="radio"] {
-    margin-right: 10px; /* Espaço entre o radio button e o texto */
+.radio-group {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-group label {
+    cursor: pointer;
+}
+
+.professor, .aluno {
+    display: none;
+}
+
+/* Botões na parte inferior do formulário */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 10px;
+    padding: 10px 0 0 0;
+    background: white;
 }
 
 form button {
-    margin-top: 15px;
     padding: 10px;
     background-color: #007bff;
     color: white;
@@ -53,13 +77,6 @@ form button {
 
 button:hover {
     background-color: #0056b3;
-} 
-
-.buttonContainer {
-    display: flex;           
-    flex-direction: row;      
-    justify-content: center;  
-    gap: 10px;   
 }
 
 .radio-group {
@@ -69,12 +86,4 @@ button:hover {
 
 .radio-group label {
     cursor: pointer;
-}
-
-.professor {
-    display: none;
-}
-
-.aluno {
-    display: none;
 }
