@@ -15,6 +15,7 @@
 
     <script type='text/babel'>
         const container = document.getElementById('letreiro')
+        const root = ReactDOM.createRoot(container)
         const textoLetreiro = "Venha estudar na Fatec!!!"
         let index = 0;
 
@@ -27,7 +28,7 @@
         }
 
         function ExibirLetreiro() {
-            ReactDOM.render(<Letreiro />, container);
+            root.render(<Letreiro />);
 
             index++
             if (index > textoLetreiro.length) {
@@ -35,7 +36,7 @@
             }
         }
 
-        setInterval(ExibirLetreiro, 150)
+        setInterval(ExibirLetreiro, 190)
     </script>
 </body>
 
