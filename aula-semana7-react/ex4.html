@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionando react à minha página</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- não usar em produção -->
+     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    
+    <script type='text/babel'>
+        const root = ReactDOM.createRoot(container)
+        const container = document.getElementById('root')
+        
+        function MeuElemento({data}){
+            return (
+                <div>
+                    <h1>Olá Mundo!</h1>
+                    <h2>Agora são {data}</h2>
+                </div>
+            )
+        }
+        
+        function tick() {
+            let agora = new Date().toLocaleTimeString()
+            root.render(<MeuElemento data = {agora} />)
+        }
+        
+        setInterval(tick,1000)
+    </script>
+</body>
+
+</html>
