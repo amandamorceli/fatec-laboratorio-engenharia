@@ -1,43 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Letreiro Fatec</title>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone@7.27.0/babel.min.js"></script>
-</head>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="http://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="http://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="http://unpkg.com/@babel/standalone@7.27.0/babel.min.js"></script>
+  </head>
 
-<body>
+  <body>
     <div id="letreiro"></div>
 
-    <script type='text/babel'>
-        const container = document.getElementById('letreiro')
-        const root = ReactDOM.createRoot(container)
-        const textoLetreiro = "Venha estudar na Fatec!!!"
-        let index = 0;
+    <script type="text/babel">
+      const container = document.getElementById("letreiro");
+      const root = ReactDOM.createRoot(container);
+      const textoLetreiro = "Venha estudar na Fatec!!!";
+      let index = 0;
 
-        function Letreiro() {
-            return (
-                <div>
-                    <h1>{textoLetreiro.slice(0, index)}</h1>
-                </div>
-            );
+      function Letreiro() {
+        return (
+          <div>
+            <h1>{textoLetreiro.slice(0, index)}</h1>
+          </div>
+        );
+      }
+
+      function ExibirLetreiro() {
+        root.render(<Letreiro />);
+
+        index++;
+        if (index > textoLetreiro.length) {
+          index = 0;
         }
+      }
 
-        function ExibirLetreiro() {
-            root.render(<Letreiro />);
-
-            index++
-            if (index > textoLetreiro.length) {
-                index = 0
-            }
-        }
-
-        setInterval(ExibirLetreiro, 190)
+      setInterval(ExibirLetreiro, 200);
     </script>
-</body>
-
+  </body>
 </html>
